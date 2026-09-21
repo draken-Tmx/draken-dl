@@ -1,4 +1,4 @@
-DrakenTMX
+# DrakenTMX
 
 Panel de descargas multimedia para Termux + Python.
 
@@ -8,7 +8,7 @@ Permite descargar videos de YouTube y TikTok, extraer audio en formato MP3 y adm
 
 ---
 
-Características
+## Características
 
 - Descarga de videos de YouTube
 - Descarga de videos de TikTok
@@ -21,6 +21,7 @@ Características
 - Soporte para "cookies.txt"
 - Compatible con Termux
 - Diseñado para funcionar directamente desde Android
+
 ## 📸 Capturas
 
 ![menu](img/menu.jpg)
@@ -40,40 +41,25 @@ Paquetes:
 
 ---
 
-Instalación
-1. instalar git 
+## Instalación
 
-pkg install git -y
-
-2. Clonar repositorio
-
-git clone https://github.com/joakonoqui-cmd/drakentmx.git
-
-2. ir a la carpeta 
-
-cd drakentmx
-
-3. permisos
-
-chmod +x install.sh 
-
-4. Ejecutar sh
-
-./install.sh
-
+1. instalar git `pkg install git -y`
+2. Clonar repositorio `git clone https://github.com/joakonoqui-cmd/drakentmx.git`
+2. Ir a la carpeta `cd drakentmx`
+3. Permisos `chmod +x install.sh`
+4. Ejecutar sh `./install.sh`
 
 Aceptá el permiso de almacenamiento cuando Android lo solicite.
 
 ---
 
-Ejecutar DrakenTMX
+## Ejecutar DrakenTMX
 
-Una vez instalado todo, ejecutá:
-
-python descarga.py
+Una vez instalado todo, ejecutá `python descarga.py`
 
 Aparecerá el menú principal:
 
+```
 1-youtube
 2-tiktok
 3-musica
@@ -81,12 +67,13 @@ Aparecerá el menú principal:
 5-eliminar videos
 6-eliminar audios
 7-salir
+```
 
 Desde este menú podés descargar contenido y administrar los archivos almacenados en el dispositivo.
 
 ---
 
-Cookies de YouTube
+## Cookies de YouTube
 
 En algunas ocasiones, YouTube puede limitar las solicitudes de descarga o mostrar mensajes como:
 
@@ -130,99 +117,89 @@ Iniciá sesión normalmente con tu cuenta.
 
 Una vez iniciada la sesión:
 
-1. Abrí nuevamente el menú de los tres puntos.
-2. Entrá en las extensiones.
-3. Abrí la extensión para exportar cookies.
-4. Seleccioná la opción correspondiente al sitio actual ("Current Site") si está disponible.
-5. Exportá las cookies de YouTube.
+1. Abrí nuevamente el menú de los tres puntos
+2. Entrá en las extensiones
+3. Abrí la extensión para exportar cookies
+4. Seleccioná la opción correspondiente al sitio actual ("Current Site") si está disponible
+5. Exportá las cookies de YouTube
 
-La extensión generará un archivo:
-
-cookies.txt
-
-Normalmente quedará guardado en la carpeta de descargas del dispositivo.
+La extensión generará un archivo `cookies.txt`. Normalmente quedará guardado en la carpeta de descargas del dispositivo.
 
 ---
 
-Instalar las cookies en DrakenTMX
+## Instalar las cookies en DrakenTMX
 
-Mové o copiá el archivo:
+Mové o copiá el archivo `cookies.txt` a `drakentmx/`. La estructura quedaría aproximadamente así:
 
-cookies.txt
-
-a:
-
-drakentmx
-
-La estructura quedaría aproximadamente así:
-
+```
 drakentmx/
 └── cookies.txt
+```
 
-DrakenTMX buscará automáticamente el archivo en la carpeta "Download".
+DrakenTMX buscará automáticamente el archivo en la carpeta `Download/`.
 
 Después simplemente ejecutá:
 
+```
 python descarga.py
+```
 
-Si las cookies son válidas, yt-dlp podrá utilizarlas durante las descargas que necesiten autenticación.
+Si las cookies son válidas, **yt-dlp** podrá utilizarlas durante las descargas que necesiten autenticación.
 
 ---
 
-Importante sobre "cookies.txt"
+## Importante
 
-Nunca compartas tu archivo "cookies.txt".
+Nunca compartas tu archivo `cookies.txt`.
 
 Las cookies pueden contener información asociada a tu sesión y, dependiendo de la plataforma y de las cookies exportadas, podrían permitir acceder a una sesión autenticada.
 
-Por seguridad:
+**Por seguridad:**
 
-- No envíes "cookies.txt" a otras personas.
-- No lo publiques en GitHub.
-- No lo subas a ningún repositorio público.
-- No lo compartas por Telegram, Discord u otras plataformas.
-- Utilizá únicamente tus propias cookies.
+- No envíes `cookies.txt` a otras personas
+- No lo publiques en GitHub
+- No lo subas a ningún repositorio público
+- No lo compartas por Telegram, Discord u otras plataformas
+- Utilizá únicamente tus propias cookies
 
 El archivo debe mantenerse fuera del repositorio.
 
-DrakenTMX incluye ".gitignore" para evitar que "cookies.txt" sea agregado accidentalmente a Git.
+DrakenTMX incluye ".gitignore" para evitar que `cookies.txt` sea agregado accidentalmente a Git.
 
 ---
 
-Estructura del proyecto
+## Estructura del proyecto
 
+```
 drakentmx/
 ├── descarga.py
 ├── guardar.py
 ├── README.md
 ├── cookies.txt
 └── .gitignore
+```
 
-El archivo "cookies.txt" no forma parte del repositorio.
+El archivo `cookies.txt` no forma parte del repositorio.
 
 ---
 
-Uso responsable
+## Uso responsable
 
-DrakenTMX utiliza ""yt-dlp"" (https://github.com/yt-dlp/yt-dlp) para realizar las descargas.
+DrakenTMX utiliza [**yt-dlp**](https://github.com/yt-dlp/yt-dlp) para realizar las descargas.
 
 Utilizá la herramienta de forma responsable y respetando:
 
-- Los términos de servicio de las plataformas.
-- Los derechos de autor.
-- Las leyes aplicables en tu país.
+- Los términos de servicio de las plataformas
+- Los derechos de autor
+- Las leyes aplicables en tu país
 
 El proyecto está pensado para descargar contenido al que tengas derecho de acceso o para usos permitidos por la plataforma correspondiente.
 
 ---
 
-Autor
+## Créditos
 
-Joako 
-
-GitHub:
-
-https://github.com/joakonoqui-cmd
+Autor [Joako](https://github.com/joakonoqui-cmd)
 
 Si te gusta el proyecto, podés dejar una estrella en el repositorio.
 
