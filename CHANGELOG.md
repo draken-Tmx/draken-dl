@@ -11,6 +11,7 @@ Todas las versiones notables de este proyecto se documentan en este archivo.
 - Ya no son necesarias las cookies, impersonate hace el trabajo, pero no está mal tenerlas.
 - Nodejs para poder pedir solicitudes a Youtube desde su ultima version.
 - Aparto para visitar el repositorio
+- Agregado VENV/ para no manchar sus paquetes.
 
 ### Changed
 - Configuración de `ydl_opts` con `js_runtimes` y `remote_components`, encontrados en `guardar.py`.

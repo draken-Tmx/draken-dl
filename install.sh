@@ -1,18 +1,21 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 echo "Instalando drakenTMX.."
 echo ""
 echo "Actualizando paquetes"
 pkg update -y && pkg upgrade -y
 
-echo "instalando paquetes"
+echo "Instalando paquetes del sistema"
 pkg install python ffmpeg git nodejs -y
 
-echo "instalando dependencias" 
-
+echo "Instalando dependencias"
+python -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
 pip install -r requirements.txt
 
 termux-setup-storage
 
-echo "Todo listo, ejecute: python descarga.py "
-
-echo "para cualquier error, hacerselo saber al dueño del repositorio"
+echo ""
+echo "Todo listo, ahora ejecuta:"
+echo "source venv/bin/activate"
+echo "python descarga.py"
