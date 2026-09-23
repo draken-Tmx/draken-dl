@@ -1,2 +1,3 @@
 yt-dlp
 rich
+yt-dlp[default,curl-cffi]  
