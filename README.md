@@ -48,8 +48,7 @@ Paquetes:
 2. Ir a la carpeta `cd drakentmx`
 3. Permisos `chmod +x install.sh`
 4. Ejecutar sh `./install.sh`
-4. Ejecutar `source venv/bin/activate`
-5. `python descarga.py`
+4. Ejecutar `draken`
 
 Aceptá el permiso de almacenamiento cuando Android lo solicite.
 
@@ -57,7 +56,7 @@ Aceptá el permiso de almacenamiento cuando Android lo solicite.
 
 ## Ejecutar DrakenTMX
 
-Una vez instalado todo, ejecutá `python descarga.py`
+Una vez instalado todo, ejecutá `draken`
 
 Aparecerá el menú principal:
 
