@@ -2,7 +2,7 @@
 
 Panel de descargas multimedia para Termux + Python.
 
-DrakenTMX es una herramienta de línea de comandos desarrollada en Python para Termux en Android, diseñada para descargar y administrar contenido multimedia de distintas plataformas.
+Draken-dl es una herramienta de línea de comandos desarrollada en Python para Termux en Android, diseñada para descargar y administrar contenido multimedia de distintas plataformas.
 
 Permite descargar videos de YouTube y TikTok, extraer audio en formato MP3 y administrar fácilmente los archivos descargados desde un menú interactivo.
 
