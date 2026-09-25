@@ -82,7 +82,7 @@ Sign in to confirm you're not a bot
 
 o solicitar información adicional para verificar la sesión.
 
-Para estos casos, DrakenTMX permite utilizar un archivo "cookies.txt" generado desde tu propia sesión de YouTube.
+Para estos casos, Draken-dl permite utilizar un archivo "cookies.txt" generado desde tu propia sesión de YouTube.
 
 ¿Cómo descargar las cookies?
 
@@ -128,7 +128,7 @@ La extensión generará un archivo `cookies.txt`. Normalmente quedará guardado 
 
 ---
 
-## Instalar las cookies en DrakenTMX
+## Instalar las cookies en Draken-dl
 
 Mové o copiá el archivo `cookies.txt` a `draken-dl/`. La estructura quedaría aproximadamente así:
 
@@ -206,6 +206,6 @@ Si te gusta el proyecto, podés dejar una estrella en el repositorio.
 
 ---
 
-DrakenTMX
+Draken-dl
 
 Un proyecto hecho en Python + Termux, pensado para tener un panel de descargas multimedia simple y funcional directamente desde Android.
