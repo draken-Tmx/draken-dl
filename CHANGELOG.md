@@ -12,6 +12,7 @@ Todas las versiones notables de este proyecto se documentan en este archivo.
 - Nodejs para poder pedir solicitudes a Youtube desde su ultima version.
 - Aparto para visitar el repositorio
 - Agregado VENV/ para no manchar sus paquetes.
+- Se agrego un alias para hacer mas rapido y optimizado el comando de inicio, basta con solo escribir `draken`,no importa en que ruta estés, el comando se va ejecutar.
 
 ### Changed
 - Configuración de `ydl_opts` con `js_runtimes` y `remote_components`, encontrados en `guardar.py`.
