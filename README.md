@@ -44,8 +44,8 @@ Paquetes:
 ## Instalación
 
 1. instalar git `pkg install git -y`
-2. Clonar repositorio `git clone https://github.com/joakonoqui-cmd/drakentmx.git`
-2. Ir a la carpeta `cd drakentmx`
+2. Clonar repositorio `git clone https://github.com/draken-Tmx/draken-dl.git`
+2. Ir a la carpeta `cd draken-dl`
 3. Permisos `chmod +x install.sh`
 4. Ejecutar sh `./install.sh`
 4. Ejecutar `draken`
