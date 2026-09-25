@@ -1,4 +1,3 @@
-venv/
 __pycache__/
 *.pyc
 Descargas/
@@ -6,3 +5,4 @@ storage/
 .env
 cookies.txt
 cookies/
+venv/

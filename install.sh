@@ -15,7 +15,10 @@ pip install -r requirements.txt
 
 termux-setup-storage
 
+echo "alias draken='cd ~/drakentmx && source venv/bin/activate && python descarga.py'" >> ~/.bashrc
+source ~/.bashrc 2>/dev/null
+source ~/.bashrc 
 echo ""
-echo "Todo listo, ahora ejecuta:"
-echo "source venv/bin/activate"
-echo "python descarga.py"
+
+echo "Instalado! Ahora solo escribe draken para correr"
+
