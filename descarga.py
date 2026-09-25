@@ -251,7 +251,7 @@ def down():
         elif op=="8":
             limpiar()
             print("[bold green]viendo codigo fuente...[/bold green]")
-            os.system("termux-open-url https://github.com/joakonoqui-cmd/drakentmx")
+            os.system("termux-open-url https://github.com/draken-Tmx/draken-dl")
         else:
             print("[bold red]opcion invalida[/bold red]")
 
