@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-echo "Instalando drakenTMX.."
+echo "Instalando draken-dl.."
 echo ""
 echo "Actualizando paquetes"
 pkg update -y && pkg upgrade -y
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 termux-setup-storage
 
-echo "alias draken='cd ~/drakentmx && source venv/bin/activate && python descarga.py'" >> ~/.bashrc
+echo "alias draken='cd ~/draken-dl && source venv/bin/activate && python descarga.py'" >> ~/.bashrc
 source ~/.bashrc 2>/dev/null
 source ~/.bashrc 
 echo ""
