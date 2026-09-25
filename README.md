@@ -1,4 +1,4 @@
-# DrakenTMX
+# Draken-dl
 
 Panel de descargas multimedia para Termux + Python.
 
@@ -54,7 +54,7 @@ Aceptá el permiso de almacenamiento cuando Android lo solicite.
 
 ---
 
-## Ejecutar DrakenTMX
+## Ejecutar Draken-dl
 
 Una vez instalado todo, ejecutá `draken`
 
@@ -130,19 +130,19 @@ La extensión generará un archivo `cookies.txt`. Normalmente quedará guardado 
 
 ## Instalar las cookies en DrakenTMX
 
-Mové o copiá el archivo `cookies.txt` a `drakentmx/`. La estructura quedaría aproximadamente así:
+Mové o copiá el archivo `cookies.txt` a `draken-dl/`. La estructura quedaría aproximadamente así:
 
 ```
-drakentmx/
+draken-dl/
 └── cookies.txt
 ```
 
-DrakenTMX buscará automáticamente el archivo en la carpeta `Download/`.
+Draken-dl buscará automáticamente el archivo en la carpeta `Download/`.
 
 Después simplemente ejecutá:
 
 ```
-python descarga.py
+draken
 ```
 
 Si las cookies son válidas, **yt-dlp** podrá utilizarlas durante las descargas que necesiten autenticación.
@@ -165,14 +165,14 @@ Las cookies pueden contener información asociada a tu sesión y, dependiendo de
 
 El archivo debe mantenerse fuera del repositorio.
 
-DrakenTMX incluye ".gitignore" para evitar que `cookies.txt` sea agregado accidentalmente a Git.
+Draken-dl incluye ".gitignore" para evitar que `cookies.txt` sea agregado accidentalmente a Git.
 
 ---
 
 ## Estructura del proyecto
 
 ```
-drakentmx/
+draken-dl/
 ├── descarga.py
 ├── guardar.py
 ├── README.md
@@ -186,7 +186,7 @@ El archivo `cookies.txt` no forma parte del repositorio.
 
 ## Uso responsable
 
-DrakenTMX utiliza [**yt-dlp**](https://github.com/yt-dlp/yt-dlp) para realizar las descargas.
+Draken-dl utiliza [**yt-dlp**](https://github.com/yt-dlp/yt-dlp) para realizar las descargas.
 
 Utilizá la herramienta de forma responsable y respetando:
 
@@ -200,7 +200,7 @@ El proyecto está pensado para descargar contenido al que tengas derecho de acce
 
 ## Créditos
 
-Autor [Joako](https://github.com/joakonoqui-cmd)
+Autor [draken](https://github.com/draken-Tmx) 
 
 Si te gusta el proyecto, podés dejar una estrella en el repositorio.
 
