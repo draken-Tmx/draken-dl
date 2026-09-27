@@ -187,3 +187,78 @@ def guardar_tiktok():
         console.input("[bold cyan]Enter para salir[/bold cyan]")
     except Exception as e:
         print(e)
+
+
+def guardar_playlist_audio():
+    limpiar()
+    try:
+        os.makedirs(audio_path, exist_ok=True)
+        url = console.input("[bold green]link de la PLAYLIST: [/bold green]")
+
+        yt_opts = {
+            "format": "bestaudio/best",
+            "noplaylist": False, 
+            "yes_playlist": True,
+            "outtmpl": f"{audio_path}/%(playlist_title)s/%(playlist_index)s - %(title)s.%(ext)s",
+            "quiet": True,
+            "no_warnings": True,
+            "writethumbnail": True,
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "0",
+                },
+                {
+                    "key": "FFmpegThumbnailsConvertor",
+                    "format": "jpg",
+                },
+                {
+                    "key": "EmbedThumbnail",
+                },
+                {
+                    "key": "FFmpegMetadata",
+                }
+            ],
+            "js_runtimes": {"node": {"path": "/data/data/com.termux/files/usr/bin/node"}},
+            "remote_components": ["ejs:github"],
+        }
+        cookies = obtener_cookies()
+        if cookies:
+            yt_opts["cookiefile"] = cookies
+
+        with yt_dlp.YoutubeDL(yt_opts) as ydl:
+            animacion(ydl.download, [url], mensaje="Descargando playlist...")
+
+        console.print(f"[bold green]✓ Playlist completa[/bold green]")
+        console.input('[bold cyan]Enter para salir[/bold cyan]')
+    except Exception as e:
+        print(e)
+
+def guardar_playlist_video():
+    limpiar()
+    try:
+        os.makedirs(video_path, exist_ok=True)
+        url = console.input("[bold green]link de la PLAYLIST: [/bold green]")
+        yt_opts = {
+            "format": "bestvideo+bestaudio/best",
+            "merge_output_format": "mp4",
+            "noplaylist": False,
+            "yes_playlist": True,
+            "outtmpl": f"{video_path}/%(playlist_title)s/%(playlist_index)s - %(title)s.%(ext)s",
+            "quiet": True,
+            "no_warnings": True,
+            "impersonate": ImpersonateTarget.from_str("chrome"),
+            "js_runtimes": {"node": {}},
+            "remote_components": ["ejs:github"],
+        }
+        cookies = obtener_cookies()
+        if cookies:
+            yt_opts["cookiefile"] = cookies
+
+        with yt_dlp.YoutubeDL(yt_opts) as ydl:
+            animacion(ydl.download, [url], mensaje="Descargando playlist...")
+
+        console.print(f"[bold green]✓ Playlist completa[/bold green]")
+    except Exception as e:
+        print(e)

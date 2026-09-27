@@ -10,13 +10,13 @@ import subprocess
 
 from rich.console import Console
 
-from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar,renombrar_archivo,abrir_kew2,instalar_kew
+from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar,renombrar_archivo,abrir_kew2,instalar_kew,guardar_playlist_video,guardar_playlist_audio
 
 ruta1="/storage/emulated/0/musica"
 
 ruta2="/storage/emulated/0/videos"
 
-menu=["youtube 🎥","tiktok 📱","musica 🎧","ver archivos descargados 💾","eliminar videos ❌🎥","eliminar audios ❌🎧","renombrar archivos ","salir 🚪","mi github 💻","instalar reproductor(kew)","abrir reproductor (kew)"]
+menu=["youtube 🎥","tiktok 📱","musica 🎧","ver archivos descargados 💾","eliminar videos ❌🎥","eliminar audios ❌🎧","renombrar archivos ","salir 🚪","mi github 💻","instalar reproductor(kew)","abrir reproductor (kew)","Descargar playlist(audio)","Descargar playlist(video)"]
 
 console=Console()
 
@@ -265,6 +265,10 @@ def down():
             instalar_kew()
         elif op == "11":
             abrir_kew2()
+        elif op =="12":
+            guardar_playlist_audio()
+        elif op =="13":
+            guardar_playlist_video()
         else:
             print("[bold red]opcion invalida[/bold red]")
 
