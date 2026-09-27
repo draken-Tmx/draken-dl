@@ -4,7 +4,8 @@ Panel de descargas multimedia para Termux + Python.
 
 Draken-dl es una herramienta de línea de comandos desarrollada en Python para Termux en Android, diseñada para descargar y administrar contenido multimedia de distintas plataformas.
 
-Permite descargar videos de YouTube y TikTok, extraer audio en formato MP3 y administrar fácilmente los archivos descargados desde un menú interactivo.
+Permite descargar videos de YouTube/Tiktok(sin marca de agua). 
+Convertir audio a MP3, descargar playlist tanto de video como de audio, reproductor de musica integrado en el menu con temas diferentes y portadas. 
 
 ---
 
@@ -20,6 +21,7 @@ Permite descargar videos de YouTube y TikTok, extraer audio en formato MP3 y adm
 - Eliminación de archivos de audio
 - Soporte para "cookies.txt"
 - Compatible con Termux
+- Reproductor de terminal integrado `kew`
 - Diseñado para funcionar directamente desde Android
 
 ## 📸 Capturas
@@ -38,6 +40,7 @@ Paquetes:
 - FFmpeg
 - yt-dlp
 - rich color
+- Kew reproductor
 
 ---
 
