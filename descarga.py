@@ -1,20 +1,22 @@
 import yt_dlp
 
-from log import console,get_progress,get_ydl_opts
-
 from rich import print
 
 import os
 
+import time
+
+import subprocess
+
 from rich.console import Console
 
-from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar
+from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar,renombrar_archivo,abrir_kew2,instalar_kew
 
 ruta1="/storage/emulated/0/musica"
 
 ruta2="/storage/emulated/0/videos"
 
-menu=["youtube 🎥","tiktok 📱","musica 🎧","ver archivos descargados 💾","eliminar videos ❌🎥","eliminar audios ❌🎧","salir 🚪","mi github 💻"]
+menu=["youtube 🎥","tiktok 📱","musica 🎧","ver archivos descargados 💾","eliminar videos ❌🎥","eliminar audios ❌🎧","renombrar archivos ","salir 🚪","mi github 💻","instalar reproductor(kew)","abrir reproductor (kew)"]
 
 console=Console()
 
@@ -248,12 +250,28 @@ def down():
                             print("[yellow]pon un numero valido[/yellow]")
 
         elif op=="7":
-            print("[bold green]saliendo[/bold green]")
-            break
+            print("")
+            while True:
+                limpiar()
+                renombrar_archivo()
+                print("[bold cyan]00.[/bold cyan][bold blue]salir[/bold blue]")
+                exi=console.input("[bold green]> [/bold green]")
+                if exi=="00":
+                    break
         elif op=="8":
+            limpiar()
+            print("")
+            print("[bold green]saliendo...[/bold green]")
+            time.sleep(0.5)
+            break
+        elif op=="9":
             limpiar()
             print("[bold green]viendo codigo fuente...[/bold green]")
             os.system("termux-open-url https://github.com/draken-Tmx/draken-dl")
+        elif op =="10":
+            instalar_kew()
+        elif op == "11":
+            abrir_kew2()
         else:
             print("[bold red]opcion invalida[/bold red]")
 
