@@ -6,3 +6,5 @@ storage/
 cookies.txt
 cookies/
 venv/
+.venv/
+.venv

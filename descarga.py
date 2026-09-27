@@ -36,6 +36,7 @@ def down():
         if op=="1":
             try:
                 while True:
+                    limpiar()
                     print("[bold cyan]1.[/bold cyan][bold blue]ingresar link[/bold blue]")
                     print("[bold cyan]2.[/bold cyan][bold blue]salir[/bold blue]")
                     ingresar=input("> ")
@@ -84,6 +85,7 @@ def down():
         elif op=="3":
             try:
                 while True:
+                    limpiar()
                     print("[bold cyan]1.[/bold cyan][bold blue]ingresar link[/bold blue]")
                     print("[bold cyan]2.[/bold cyan][bold blue]salir[/bold blue]")
                     ingresar=input("> ")
