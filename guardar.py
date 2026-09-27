@@ -65,7 +65,7 @@ def guardar_audio():
             "postprocessors":[{
                 "key":"FFmpegExtractAudio",
                 "preferredcodec":"mp3",
-                "preferredquality":"10",
+                "preferredquality":"0",
             }],
             "js_runtimes": {"node": {"path": "/data/data/com.termux/files/usr/bin/node"}},
             "remote_components": ["ejs:github"],
