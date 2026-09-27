@@ -129,21 +129,32 @@ def guardar_audio():
             "outtmpl": f"{audio_path}/%(title)s.%(id)s.%(ext)s",
             "quiet": True,
             "no_warnings": True,
-            "postprocessors": [{
-                "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",
-                "preferredquality": "0",
-            }],
+            "writethumbnail": True,
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "0",
+                },
+                {
+                    "key": "FFmpegThumbnailsConvertor",
+                    "format": "jpg",
+                },
+                {
+                    "key": "EmbedThumbnail",
+                },
+                {
+                    "key": "FFmpegMetadata",
+                }
+            ],
             "js_runtimes": {"node": {"path": "/data/data/com.termux/files/usr/bin/node"}},
             "remote_components": ["ejs:github"],
         }
         cookies = obtener_cookies()
         if cookies:
             yt_opts["cookiefile"] = cookies
-
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
             animacion(ydl.download, [url], mensaje="descargando...")
-
         print("[bold green]descarga completa[/bold green]")
         console.input('[bold cyan]Enter para salir[/bold cyan]')
     except Exception as e:
