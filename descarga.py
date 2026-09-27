@@ -45,8 +45,6 @@ def down():
                     try:
                         if ingresar=="1":
                             guardar_video()
-                            print("[bold green]descarga completa[/bold green] ✅✅") 
-                            print("")
                         elif ingresar=="2":
                                 break
                         else:
@@ -251,13 +249,8 @@ def down():
 
         elif op=="7":
             print("")
-            while True:
-                limpiar()
-                renombrar_archivo()
-                print("[bold cyan]00.[/bold cyan][bold blue]salir[/bold blue]")
-                exi=console.input("[bold green]> [/bold green]")
-                if exi=="00":
-                    break
+            limpiar()
+            renombrar_archivo()
         elif op=="8":
             limpiar()
             print("")

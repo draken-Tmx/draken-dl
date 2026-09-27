@@ -56,7 +56,7 @@ def abrir_kew2():
 def instalar_kew():
     if shutil.which("kew"):
         console.print("[bold green]✓ Kew ya está instalado[/bold green]")
-        input("Enter para salir")
+        console.input("[bold cyan]Enter para salir[/bold cyan]")
         return
 
     with console.status("[bold cyan]Instalando Kew...[/bold cyan]", spinner="dots"):
@@ -67,7 +67,7 @@ def instalar_kew():
     else:
         console.print("[bold red]✗ La instalación falló[/bold red]")
 
-    input("Enter para salir...")
+    console.input("[bold green]Enter para salir...[/bold green]")
 
 def renombrar_archivo():
     limpiar()
@@ -76,7 +76,7 @@ def renombrar_archivo():
         path = video_path if t == "v" else audio_path
         files = os.listdir(path)
 
-        for i, n in enumerate(files,start=1):
+        for i, n in enumerate(files):
             console.print(f"{i} > {n}")
 
         idx = int(console.input("Numero: "))
@@ -90,7 +90,7 @@ def renombrar_archivo():
     except Exception as e:
         console.print(f"[red]{e}[/red]")
 
-    console.input("Enter para salir...")
+    console.input("[bold cyan]Enter para salir...[/bold cyan]")
 
 def guardar_video():
     limpiar()
@@ -113,7 +113,8 @@ def guardar_video():
 
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
             animacion(ydl.download, [url], mensaje="descargando...")
-        print("descarga completa")
+        print("[bold green]descarga completa[/bold green]")
+        console.input('[bold cyan]Enter para salir[/bold cyan]')
     except Exception as e:
         print(e)
 
@@ -143,7 +144,8 @@ def guardar_audio():
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
             animacion(ydl.download, [url], mensaje="descargando...")
 
-        print("descarga completa")
+        print("[bold green]descarga completa[/bold green]")
+        console.input('[bold cyan]Enter para salir[/bold cyan]')
     except Exception as e:
         print(e)
 
@@ -170,6 +172,7 @@ def guardar_tiktok():
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
             animacion(ydl.download, [url], mensaje="descargando...")
 
-        print("descarga exitosa")
+        print("[bold green]descarga exitosa[/bold green]")
+        console.input("[bold cyan]Enter para salir[/bold cyan]")
     except Exception as e:
         print(e)
