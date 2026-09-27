@@ -28,7 +28,7 @@ Convertir audio a MP3, descargar playlist tanto de video como de audio, reproduc
 
 ![menu](img/menu.png)
 ![descarga con exito](img/descarga.png)
-![kew] (img/kew.jpg) 
+![kew](img/kew.png) 
 
 ---
 
