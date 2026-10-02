@@ -12,7 +12,7 @@ console = Console()
 video_path = "/storage/emulated/0/videos"
 audio_path = "/storage/emulated/0/musica"
 
-def animacion(funcion, *args, mensaje="probando animacion"):
+def animacion(funcion, *args, mensaje=""):
     with console.status(f"[bold green]{mensaje}[/bold green]", spinner="dots"):
         return funcion(*args)
 
