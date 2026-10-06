@@ -262,3 +262,26 @@ def guardar_playlist_video():
         console.print(f"[bold green]✓ Playlist completa[/bold green]")
     except Exception as e:
         print(e)
+
+def guardar_pin():
+    limpiar()
+    try:
+        url=console.input("[bold green]ingrese su link: [/bold green]")
+        yt_opts={
+            "format":"bestvideo+bestaudio/best",
+            "outtmpl":f"{video_path}%s(ext)",
+            "noplaylist":True,
+            "outtmpl":f"{video_path}/%(title).50s-%(id)s.%(ext)s",
+            "quiet":True,
+            "no_warnings":True,
+            "noprogress":True
+        }
+
+        with yt_dlp.YoutubeDL(yt_opts) as ydl:
+            animacion(ydl.download, [url],
+            mensaje="[bold green]descargando video...[/bold green]")
+        console.print("[bold green]descarga completa[/bold green]")
+        console.input("[bold blue]Enter para salir[/bold blue]")
+    except Exception as e:
+        print(e)
+

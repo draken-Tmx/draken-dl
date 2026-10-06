@@ -5,7 +5,7 @@ echo "Actualizando paquetes"
 pkg update -y && pkg upgrade -y
 
 echo "Instalando paquetes del sistema"
-pkg install python ffmpeg git nodejs -y
+pkg install python ffmpeg git nodejs chafa -y
 
 echo "Instalando dependencias"
 python -m venv venv

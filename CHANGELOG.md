@@ -18,6 +18,8 @@ Todas las versiones notables de este proyecto se documentan en este archivo.
 - Opcion de instalar el reproductor.
 - Mejor de calidad.
 - Portadas de musica incorporadas con `chafa`,`sixcels`.
+- Mejora de menu y portada añadida.
+- Nueva funcion agregada, permite descargar videos de `pinterest`.
 
 ### Changed
 - Configuración de `ydl_opts` con `js_runtimes` y `remote_components`, encontrados en `guardar.py`.
