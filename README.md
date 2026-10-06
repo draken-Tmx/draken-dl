@@ -28,7 +28,7 @@ Con un apartado para poder cambiar el banner de inicio, editar el apartado de `c
 
 ## 📸 Capturas
 
-![menu](img/menu1.png)
+![menu](img/menu1.png) 
 ![descarga con exito](img/descarga.png)
 ![kew](img/kew.png) 
 
