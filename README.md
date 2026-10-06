@@ -7,6 +7,8 @@ Draken-dl es una herramienta de línea de comandos desarrollada en Python para T
 Permite descargar videos de YouTube/Tiktok(sin marca de agua). 
 Convertir audio a MP3, descargar playlist tanto de video como de audio, reproductor de musica integrado en el menu con temas diferentes y portadas. 
 
+Con un apartado para poder cambiar el banner de inicio, editar el apartado de `chafa` en `descargar.py` por el nombre de su imagen previamente guardada en la carpeta `logos`. 
+
 ---
 
 ## Características
@@ -71,7 +73,7 @@ Aparecerá el menú principal:
 4-ver archivos descargados
 5-eliminar videos
 6-eliminar audios
-7-salir
+y Mas
 ```
 
 Desde este menú podés descargar contenido y administrar los archivos almacenados en el dispositivo.
