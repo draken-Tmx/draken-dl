@@ -54,6 +54,7 @@ Paquetes:
 2. Ir a la carpeta `cd draken-dl`
 3. Permisos `chmod +x install.sh`
 4. Ejecutar sh `./install.sh`
+5. Luego hacer `pip install -r requirements.txt`
 4. Ejecutar `draken`
 
 Aceptá el permiso de almacenamiento cuando Android lo solicite.
