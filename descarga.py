@@ -154,9 +154,9 @@ def down():
                     for archivo in os.listdir(ruta1):
                         print(archivo)
                         print("[bold cyan]00.[/][bold blue] salir[/]")
-                        salir=input("> ")
-                        if salir=="00":
-                            break
+                    salir=input("> ")
+                    if salir=="00":
+                        break
             else:
                 if not os.listdir(ruta1) and not os.listdir(ruta2):
                     while True:
