@@ -12,7 +12,7 @@ import subprocess
 
 from rich.console import Console
 
-from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar,renombrar_archivo,abrir_kew2,instalar_kew,guardar_playlist_video,guardar_playlist_audio,guardar_pin
+from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar,renombrar_archivo,abrir_kew2,instalar_kew,guardar_playlist_video,guardar_playlist_audio,guardar_pin,borrado
 
 ruta1="/storage/emulated/0/musica"
 
@@ -217,7 +217,7 @@ def down():
                                 archivo_a_borrar = archivos[num - 1]
                                 confirmar = console.input(f"[bold yellow]seguro que quieres borrar {archivo_a_borrar}? si/no: [/]")
                                 if confirmar.lower() == "si":
-                                    os.remove(os.path.join(ruta2, archivo_a_borrar))
+                                    borrado(os.path.join(ruta2, archivo_a_borrar))
                                     print(f"[bold green]{archivo_a_borrar} borrado [/]✅")
                                     archivos = os.listdir(ruta2)
                                     if not archivos:
@@ -264,7 +264,7 @@ def down():
                                 archivo_a_borrar = archivos[num - 1]
                                 confirmar = console.input(f"[bold yellow]seguro que quieres borrar {archivo_a_borrar}? si/no: [/]")
                                 if confirmar.lower() == "si":
-                                    os.remove(os.path.join(ruta1, archivo_a_borrar))
+                                    borrado(os.path.join(ruta1, archivo_a_borrar))
                                     print(f"[bold green]{archivo_a_borrar} borrado [/]✅")
                                     archivos = os.listdir(ruta1)
                                     if not archivos:

@@ -9,6 +9,13 @@ from rich.console import Console
 
 console = Console()
 
+def borrado(ruta):
+    if os.path.isdir(ruta):
+        shutil.rmtree(ruta)
+    else:
+        os.remove(ruta)
+
+
 video_path = "/storage/emulated/0/videos"
 audio_path = "/storage/emulated/0/musica"
 
