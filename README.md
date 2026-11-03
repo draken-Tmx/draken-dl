@@ -2,7 +2,7 @@
 
 Panel de descargas multimedia para Termux + Python.
 
-Draken-dl es una herramienta de línea de comandos desarrollada en Python para Termux en Android, diseñada para descargar y administrar contenido multimedia de distintas plataformas.
+Draken-dl es una herramienta de línea de comandos desarrollada en Python para Terminal en Android, diseñada para descargar y administrar contenido multimedia de distintas plataformas.
 
 Permite descargar videos de YouTube/Tiktok(sin marca de agua). 
 Convertir audio a MP3, descargar playlist tanto de video como de audio, reproductor de musica integrado en el menu con temas diferentes y portadas. 
@@ -37,7 +37,7 @@ Con un apartado para poder cambiar el banner de inicio, editar el apartado de `c
 Paquetes:
 
 - Android
-- Termux
+- Termux/linux
 - Python 3
 - Git
 - FFmpeg
