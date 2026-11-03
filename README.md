@@ -1,6 +1,6 @@
 # Draken-dl
 
-Panel de descargas multimedia para Termux + Python.
+Panel de descargas multimedia para Terminal + Python.
 
 Draken-dl es una herramienta de línea de comandos desarrollada en Python para Terminal en Android, diseñada para descargar y administrar contenido multimedia de distintas plataformas.
 
