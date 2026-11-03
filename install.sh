@@ -1,13 +1,13 @@
 #!/data/data/com.termux/files/usr/bin/bash
-echo "Instalando draken-dl.."
+echo "installing draken-dl.."
 echo ""
-echo "Actualizando paquetes"
+echo "updating paquetes"
 pkg update -y && pkg upgrade -y
 
-echo "Instalando paquetes del sistema"
+echo "installing system packages"
 pkg install python ffmpeg git nodejs chafa -y
 
-echo "Instalando dependencias"
+echo "installing dependencies"
 python -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
@@ -50,5 +50,5 @@ EOF
 fi
 
 echo ""
-echo "Instalado! Cerrá y abrí Termux, ahora solo escribí draken para correr"
-echo "Si no te toma, hacé: source ~/.bashrc (o source ~/.zshrc)"
+echo "Once installed, close your terminal and simply type draken to run the program."
+echo "if that doesn't work, do: source ~/.bashrc (o source ~/.zshrc)"

@@ -12,17 +12,17 @@ import subprocess
 
 from rich.console import Console
 
-from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar,renombrar_archivo,abrir_kew2,instalar_kew,guardar_playlist_video,guardar_playlist_audio,guardar_pin,borrado
+from guardar import save_video, save_tiktok, save_audio, clear,rename_file,open_kew2,install_kew,save_playlist_video,save_playlist_audio,save_pin,erased
 
 ruta1="/storage/emulated/0/musica"
 
 ruta2="/storage/emulated/0/videos"
 
-menu=["pinterest 📌","youtube ☘️","tiktok","musica 🎧",
-"ver archivos 📁","eliminar vid❌",
-"eliminar aud❌","renombrar",
-"mi github","instalar kew","abrir kew",
-"Plist aud","Plist vid","salir"]
+menu=["pinterest ","youtube ","tiktok","music ",
+"view files ","deleted vid",
+"deleted aud","rename",
+"my github","install kew","open kew",
+"Plist aud","Plist vid","exit"]
 
 console=Console()
 
@@ -31,7 +31,7 @@ console=Console()
 
 def down():
     while True:
-        limpiar()
+        clear()
         os.system("chafa --align mid,top --size 40x35 logos/dragon1.png")
         for i in range(0, len(menu), 2):
             izq = f"{i+1}.{menu[i]}"
@@ -48,13 +48,13 @@ def down():
         if op=="1":
             try:
                 while True:
-                    limpiar()
-                    print("[bold cyan]1.[/][bold blue]ingresar link[/]")
-                    print("[bold cyan]2.[/][bold blue]salir[/]")
+                    clear()
+                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
+                    print("[bold cyan]2.[/][bold blue]exit[/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
-                            guardar_pin()
+                            save_pin()
                         elif ingresar=="2":
                             break
                         else:
@@ -69,17 +69,17 @@ def down():
         if op=="2":
             try:
                 while True:
-                    limpiar()
-                    print("[bold cyan]1.[/][bold blue]ingresar link[/]")
-                    print("[bold cyan]2.[/bold cyan][bold blue]salir[/]")
+                    clear()
+                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
+                    print("[bold cyan]2.[/bold cyan][bold blue]exit[/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
-                            guardar_video()
+                            save_video()
                         elif ingresar=="2":
                                 break
                         else:
-                            print("[bold red]ingrese una opcion valida[/]")
+                            print("[bold red]Enter a valid option[/]")
                     except Exception as e:
                             print(f"[bold red] error [/]{e}")
             except Exception as e:
@@ -92,14 +92,14 @@ def down():
         elif op=="3":
             try:
                 while True:
-                    limpiar()
-                    print("[bold cyan]1.[/][bold blue]ingresar link[/]")
-                    print("[bold cyan]2.[/][bold blue]salir [/]")
+                    clear()
+                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
+                    print("[bold cyan]2.[/][bold blue]exit [/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
-                            guardar_tiktok()
-                            print("[bold green]descarga completa[/] ✅✅") 
+                            save_tiktok()
+                            print("[bold green]complete download [/] ✅✅") 
                             print("")
                         elif ingresar=="2":
                             break
@@ -116,52 +116,52 @@ def down():
         elif op=="4":
             try:
                 while True:
-                    limpiar()
-                    print("[bold cyan]1.[/][bold blue]ingresar link[/]")
-                    print("[bold cyan]2.[/][bold blue]salir[/]")
+                    clear()
+                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
+                    print("[bold cyan]2.[/][bold blue]exit[/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
                             guardar_audio()
-                            print("[bold green]descarga completa[/] ✅✅") 
+                            print("[bold green]complete download[/] ✅✅") 
                             print("")
                         elif ingresar=="2":
                             break
                     except Exception as e:
                         print(f"[bold red]error[/]{e}")
             except Exception as e:
-                print(f"[bold red]fallo[/] ❌❌{e}")
+                print(f"[bold red]failed[/] ❌❌{e}")
                 print("")
         elif op=="5":
             print("")       
             if not os.path.exists(ruta1) and not os.path.exists(ruta2):
                 while True:
-                    print("[bold red]no hay archivos descargados[/]")
-                    print("[bold cyan]00.[/][bold blue] salir[/]")
-                    salir=input("> ")
-                    if salir =="00":
+                    print("[bold red]No files downloaded[/]")
+                    print("[bold cyan]00.[/][bold blue] exit[/]")
+                    exit=input("> ")
+                    if exit =="00":
                         break
             elif not os.path.exists(ruta1):
                 while True:
-                    print("[bold red]no hay canciones,solo videos[/]")
-                    print("[bold cyan]00.[/][bold blue] salir[/]")
-                    salir=input("> ")
-                    if salir=="00":
+                    print("[bold red]there are no songs,only videos[/]")
+                    print("[bold cyan]00.[/][bold blue] exit[/]")
+                    exit=input("> ")
+                    if exit=="00":
                         break
             elif not os.path.exists(ruta2):
                 while True:
-                    print("[bold red]no hay videos,solo canciones[/]")
+                    print("[bold red]there are no videos,only songs[/]")
                     for archivo in os.listdir(ruta1):
                         print(archivo)
-                        print("[bold cyan]00.[/][bold blue] salir[/]")
-                    salir=input("> ")
-                    if salir=="00":
+                        print("[bold cyan]00.[/][bold blue] exit[/]")
+                    exit=input("> ")
+                    if exit=="00":
                         break
             else:
                 if not os.listdir(ruta1) and not os.listdir(ruta2):
                     while True:
-                        print("[bold red]no hay archivos descargados[/]")
-                        print("[bold cyan]00.[/][bold blue]salir[/]")
+                        print("[bold red]No files downloaded[/]")
+                        print("[bold cyan]00.[/][bold blue]exit[/]")
                         select=input("> ")
                         if select=="00":
                             break
@@ -169,16 +169,16 @@ def down():
                     while True:
                         print("")
                         for archivo in os.listdir(ruta1):
-                            print("[bold green]canciones descargadas[/]")
+                            print("[bold green]downloaded songs[/]")
                             print(archivo)
                             print("")
                         for archivo in os.listdir(ruta2):
-                            print("[bold green]videos de/scargados[/]")
+                            print("[bold green]downloaded videos[/]")
                             print(archivo)
                             print("")
-                        print("[bold cyan]00.[/][bold blue] salir[/]")
-                        salir=input("> ")
-                        if salir=="00":
+                        print("[bold cyan]00.[/][bold blue] exit[/]")
+                        exit=input("> ")
+                        if exit=="00":
                             break
 
 
@@ -187,26 +187,26 @@ def down():
             # FLUJO DE VIDEO
         if op == "6":
             if not os.path.exists(ruta2):
-                print("[bold red]no hay nada[/]")
+                print("[bold red]there is nothing[/]")
                 while True:
-                    print("00.salir")
-                    salir=input("> ")
-                    if salir=="00":
+                    print("00.exit")
+                    exit=input("> ")
+                    if exit=="00":
                         break
             else:
                 archivos = os.listdir(ruta2)
                 if not archivos:
-                    print("[bold red]no hay archivos[/]")
+                    print("[bold red]there are no files[/]")
                     while True:
-                        print("00.salir")
-                        salir=input("> ")
-                        if salir=="00":
+                        print("00.exit")
+                        exit=input("> ")
+                        if exit=="00":
                             break
                 else:
                     while True:
                         for i, archivo in enumerate(archivos, 1):
                             print(f"{i}-{archivo}")
-                        print("[bold cyan]00.[/][bold blue]salir[/b]")
+                        print("[bold cyan]00.[/][bold blue]exit[/b]")
                         opcion = console.input("[bold blue]> [/]").strip()
                         if opcion == "00":
                             print("")
@@ -215,45 +215,45 @@ def down():
                             num = int(opcion)
                             if 1 <= num <= len(archivos):
                                 archivo_a_borrar = archivos[num - 1]
-                                confirmar = console.input(f"[bold yellow]seguro que quieres borrar {archivo_a_borrar}? si/no: [/]")
-                                if confirmar.lower() == "si":
+                                confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? yes/no: [/]")
+                                if confirmar.lower() == "yes":
                                     borrado(os.path.join(ruta2, archivo_a_borrar))
-                                    print(f"[bold green]{archivo_a_borrar} borrado [/]✅")
+                                    print(f"[bold green]{archivo_a_borrar}erased[/]✅")
                                     archivos = os.listdir(ruta2)
                                     if not archivos:
                                         break
                                 elif confirmar.lower() == "no":
-                                    print("[bold red]operacion cancelada[/]")
+                                    print("[bold red]canceled operation[/]")
                                 else:
-                                    print("[bold red]opcion invalida[/]")
+                                    print("[bold red]invalid option[/]")
                             else:
-                                print("[bold red]fuera de rango[/]")
+                                print("[bold red]out of range[/]")
                         except ValueError:
-                            print("[yellow]pon un numero valido[/]")
+                            print("[yellow]enter a valid number[/]")
 
                 #FLUJO DE AUDIO
         if op == "7":
             if not os.path.exists(ruta1):
-                print("[bold red]no hay nada[/]")
+                print("[bold red]there is nothing[/]")
                 while True:
-                    print("00.salir")
-                    salir=input("> ")
-                    if salir=="00":
+                    print("00.exit")
+                    exit=input("> ")
+                    if exit=="00":
                         break
             else:
                 archivos = os.listdir(ruta1)
                 if not archivos:
-                    print("[bold red]no hay archivos[/]")
+                    print("[bold red]there are no files[/]")
                     while True:
-                        print("00.salir")
-                        salir=input("> ")
-                        if salir=="00":
+                        print("00.exit")
+                        exit=input("> ")
+                        if exit=="00":
                             break
                 else:
                     while True:
                         for i, archivo in enumerate(archivos, 1):
                             print(f"{i}-{archivo}")
-                        print("[bold cyan]00.[/][bold blue]salir[/]")
+                        print("[bold cyan]00.[/][bold blue]exit[/]")
                         opcion = console.input("[bold blue]> [/]").strip()
                         if opcion == "00":
                             print("")
@@ -262,44 +262,44 @@ def down():
                             num = int(opcion)
                             if 1 <= num <= len(archivos):
                                 archivo_a_borrar = archivos[num - 1]
-                                confirmar = console.input(f"[bold yellow]seguro que quieres borrar {archivo_a_borrar}? si/no: [/]")
+                                confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? si/no: [/]")
                                 if confirmar.lower() == "si":
                                     borrado(os.path.join(ruta1, archivo_a_borrar))
-                                    print(f"[bold green]{archivo_a_borrar} borrado [/]✅")
+                                    print(f"[bold green]{archivo_a_borrar}erased[/]✅")
                                     archivos = os.listdir(ruta1)
                                     if not archivos:
                                         break
                                 elif confirmar.lower() == "no":
-                                    print("[bold red]operacion cancelada[/]")
+                                    print("[bold red]canceled operation[/]")
                                 else:
-                                    print("[bold red]opcion invalida[/]")
+                                    print("[bold red]invalid option[/]")
                             else:
-                                print("[bold red]fuera de rango[/]")
+                                print("[bold red]out of range[/]")
                         except ValueError:
-                            print("[yellow]pon un numero valido[/]")
+                            print("[yellow]enter a valid number[/]")
 
         elif op=="8":
             print("")
-            limpiar()
-            renombrar_archivo()
+            clear()
+            rename_file()
         elif op=="9":
-            limpiar()
-            print("[bold green]viendo codigo fuente...[/]")
+            clear()
+            print("[bold green]viewing source code...[/]")
             os.system("termux-open-url https://github.com/draken-Tmx/draken-dl")
         elif op =="10":
-            instalar_kew()
+            install_kew()
         elif op == "11":
-            abrir_kew2()
+            open_kew2()
         elif op =="12":
-            guardar_playlist_audio()
+            save_playlist_audio()
         elif op =="13":
-            guardar_playlist_video()
+            save_playlist_video()
         elif op == "14":
-            print("[bold green]saliendo...[/]")
+            print("[bold green]leaving...[/]")
             time.sleep(0.5)
             break
         else:
-            print("[bold red]opcion invalida[/]")
+            print("[bold red]invalid option[/]")
 
 if __name__=="__main__":
     down()

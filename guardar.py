@@ -9,34 +9,34 @@ from rich.console import Console
 
 console = Console()
 
-def borrado(ruta):
-    if os.path.isdir(ruta):
-        shutil.rmtree(ruta)
+def erased(route):
+    if os.path.isdir(route):
+        shutil.rmtree(route)
     else:
-        os.remove(ruta)
+        os.remove(route)
 
 
 video_path = "/storage/emulated/0/videos"
 audio_path = "/storage/emulated/0/musica"
 
-def animacion(funcion, *args, mensaje=""):
-    with console.status(f"[bold green]{mensaje}[/bold green]", spinner="dots"):
+def animation(funcion, *args, message=""):
+    with console.status(f"[bold green]{message}[/bold green]", spinner="dots"):
         return funcion(*args)
 
-def limpiar():
+def clear():
     console.clear()
 
-def obtener_cookies():
+def get_cookies():
     if os.path.exists("cookies.txt"):
         return "cookies.txt"
     return None
 
-def abrir_kew2():
+def open_kew2():
     while True:
-        limpiar()
+        clear()
         print("")
-        print("[bold cyan]1.[/bold cyan][bold blue]abrir reproductor[/bold blue]")
-        print("[bold cyan]2.[/bold cyan][bold blue]salir[/bold blue]")
+        print("[bold cyan]1.[/bold cyan][bold blue]open player[/bold blue]")
+        print("[bold cyan]2.[/bold cyan][bold blue]exit[/bold blue]")
 
         select = input("> ")
 
@@ -47,63 +47,63 @@ def abrir_kew2():
                 os.system("stty sane")
                 sys.stdin = open("/dev/tty", "r")
             else:
-                print("no tienes el reproductor, quieres instalarlo? y/n")
+                print("You don't have the player, do you want to install it? y/n")
                 inst = input("> ").lower()
                 if inst == "y":
-                    instalar_kew()
+                    install_kew()
                 elif inst == "n":
                     break
                 else:
-                    print("opción inválida")
+                    print("invalid option")
         elif select == "2":
             break
         else:
-            print("opción inválida")
+            print("invalid option")
 
-def instalar_kew():
+def install_kew():
     if shutil.which("kew"):
-        console.print("[bold green]✓ Kew ya está instalado[/bold green]")
-        console.input("[bold cyan]Enter para salir[/bold cyan]")
+        console.print("[bold green]✓ kew is already installed[/bold green]")
+        console.input("[bold cyan]Enter to exit[/bold cyan]")
         return
 
-    with console.status("[bold cyan]Instalando Kew...[/bold cyan]", spinner="dots"):
-        resultado = subprocess.run(["pkg", "install", "kew", "chafa", "libsixel", "-y"])
+    with console.status("[bold cyan]Installing Kew...[/bold cyan]", spinner="dots"):
+        resulted = subprocess.run(["pkg", "install", "kew", "chafa", "libsixel", "-y"])
 
-    if resultado.returncode == 0:
-        console.print("[bold green]✓ Instalación completa[/bold green]")
+    if resulted.returncode == 0:
+        console.print("[bold green]✓ complete installation[/bold green]")
     else:
-        console.print("[bold red]✗ La instalación falló[/bold red]")
+        console.print("[bold red]✗ the installation failed[/bold red]")
 
-    console.input("[bold green]Enter para salir...[/bold green]")
+    console.input("[bold green]Enter to exit...[/bold green]")
 
-def renombrar_archivo():
-    limpiar()
+def rename_file():
+    clear()
     try:
-        t = console.input("[green]¿(v)ideos o (m)usica?: [/green]").lower()
+        t = console.input("[green]¿(v)ideos or (m)usic?: [/green]").lower()
         path = video_path if t == "v" else audio_path
         files = os.listdir(path)
 
         for i, n in enumerate(files):
             console.print(f"{i} > {n}")
 
-        idx = int(console.input("Numero: "))
-        viejo = os.path.join(path, files[idx])
+        idx = int(console.input("Number: "))
+        old = os.path.join(path, files[idx])
 
-        nuevo = console.input("Nuevo nombre sin extension: ").strip()
-        ext = os.path.splitext(viejo)[1]
+        new = console.input("New name without extension: ").strip()
+        ext = os.path.splitext(old)[1]
 
-        os.rename(viejo, os.path.join(path, nuevo + ext))
-        console.print(f"[green]Listo: {nuevo + ext}[/green]")
+        os.rename(old, os.path.join(path, new + ext))
+        console.print(f"[green]ready: {new + ext}[/green]")
     except Exception as e:
         console.print(f"[red]{e}[/red]")
 
-    console.input("[bold cyan]Enter para salir...[/bold cyan]")
+    console.input("[bold cyan]Enter to exit...[/bold cyan]")
 
-def guardar_video():
-    limpiar()
+def save_video():
+    clear()
     try:
         os.makedirs(video_path, exist_ok=True)
-        url = console.input("[bold green]ingresar link: [/bold green]")
+        url = console.input("[bold green]link: [/bold green]")
         yt_opts = {
             "format": "bestvideo+bestaudio/best",
             "merge_output_format": "mp4",
@@ -114,22 +114,22 @@ def guardar_video():
             "quiet": True,
             "no_warnings": True,
         }
-        cookies = obtener_cookies()
+        cookies = get_cookies()
         if cookies:
             yt_opts["cookiefile"] = cookies
 
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
-            animacion(ydl.download, [url], mensaje="descargando...")
-        print("[bold green]descarga completa[/bold green]")
-        console.input('[bold cyan]Enter para salir[/bold cyan]')
+            animation(ydl.download, [url], message="downloading...")
+        print("[bold green]download completed[/bold green]")
+        console.input('[bold cyan]Enter to exit[/bold cyan]')
     except Exception as e:
         print(e)
 
-def guardar_audio():
-    limpiar()
+def save_audio():
+    clear()
     try:
         os.makedirs(audio_path, exist_ok=True)
-        url = console.input("[bold green]ingresar link: [/bold green]")
+        url = console.input("[bold green]link: [/bold green]")
         yt_opts = {
             "format": "bestaudio/best",
             "noplaylist": True,
@@ -157,21 +157,21 @@ def guardar_audio():
             "js_runtimes": {"node": {"path": "/data/data/com.termux/files/usr/bin/node"}},
             "remote_components": ["ejs:github"],
         }
-        cookies = obtener_cookies()
+        cookies = get_cookies()
         if cookies:
             yt_opts["cookiefile"] = cookies
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
-            animacion(ydl.download, [url], mensaje="descargando...")
-        print("[bold green]descarga completa[/bold green]")
-        console.input('[bold cyan]Enter para salir[/bold cyan]')
+            animation(ydl.download, [url], message="downloading...")
+        print("[bold green]download completed[/bold green]")
+        console.input('[bold cyan]Enter to exit[/bold cyan]')
     except Exception as e:
         print(e)
 
-def guardar_tiktok():
-    limpiar()
+def save_tiktok():
+    clear()
     try:
         os.makedirs(video_path, exist_ok=True)
-        url = console.input("[bold green]link de tiktok: [/bold green]")
+        url = console.input("[bold green]link tiktok: [/bold green]")
 
         yt_opts = {
             "format": "best",
@@ -183,24 +183,24 @@ def guardar_tiktok():
                 "tiktok": {"api_hostname": ["api22-normal-c-useast2a.tiktokv.com"]}
             },
         }
-        cookies = obtener_cookies()
+        cookies = get_cookies()
         if cookies:
             yt_opts["cookiefile"] = cookies
 
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
-            animacion(ydl.download, [url], mensaje="descargando...")
+            animation(ydl.download, [url], message="downloading...")
 
-        print("[bold green]descarga exitosa[/bold green]")
-        console.input("[bold cyan]Enter para salir[/bold cyan]")
+        print("[bold green]download completed[/bold green]")
+        console.input("[bold cyan]Enter to exit[/bold cyan]")
     except Exception as e:
         print(e)
 
 
-def guardar_playlist_audio():
-    limpiar()
+def save_playlist_audio():
+    clear()
     try:
         os.makedirs(audio_path, exist_ok=True)
-        url = console.input("[bold green]link de la PLAYLIST: [/bold green]")
+        url = console.input("[bold green]link PLAYLIST: [/bold green]")
 
         yt_opts = {
             "format": "bestaudio/best",
@@ -230,23 +230,23 @@ def guardar_playlist_audio():
             "js_runtimes": {"node": {"path": "/data/data/com.termux/files/usr/bin/node"}},
             "remote_components": ["ejs:github"],
         }
-        cookies = obtener_cookies()
+        cookies = get_cookies()
         if cookies:
             yt_opts["cookiefile"] = cookies
 
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
-            animacion(ydl.download, [url], mensaje="Descargando playlist...")
+            animation(ydl.download, [url], message="downloading playlist...")
 
         console.print(f"[bold green]✓ Playlist completa[/bold green]")
-        console.input('[bold cyan]Enter para salir[/bold cyan]')
+        console.input('[bold cyan]Enter para exit[/bold cyan]')
     except Exception as e:
         print(e)
 
-def guardar_playlist_video():
-    limpiar()
+def save_playlist_video():
+    clear()
     try:
         os.makedirs(video_path, exist_ok=True)
-        url = console.input("[bold green]link de la PLAYLIST: [/bold green]")
+        url = console.input("[bold green]link PLAYLIST: [/bold green]")
         yt_opts = {
             "format": "bestvideo+bestaudio/best",
             "merge_output_format": "mp4",
@@ -259,21 +259,21 @@ def guardar_playlist_video():
             "js_runtimes": {"node": {}},
             "remote_components": ["ejs:github"],
         }
-        cookies = obtener_cookies()
+        cookies = get_cookies()
         if cookies:
             yt_opts["cookiefile"] = cookies
 
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
-            animacion(ydl.download, [url], mensaje="Descargando playlist...")
+            animation(ydl.download, [url], message="downloading playlist...")
 
-        console.print(f"[bold green]✓ Playlist completa[/bold green]")
+        console.print(f"[bold green]✓ Playlist completed[/bold green]")
     except Exception as e:
         print(e)
 
-def guardar_pin():
-    limpiar()
+def save_pin():
+    clear()
     try:
-        url=console.input("[bold green]ingrese su link: [/bold green]")
+        url=console.input("[bold green]link: [/bold green]")
         yt_opts={
             "format":"bestvideo+bestaudio/best",
             "outtmpl":f"{video_path}%s(ext)",
@@ -285,10 +285,10 @@ def guardar_pin():
         }
 
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
-            animacion(ydl.download, [url],
-            mensaje="[bold green]descargando video...[/bold green]")
-        console.print("[bold green]descarga completa[/bold green]")
-        console.input("[bold blue]Enter para salir[/bold blue]")
+            animation(ydl.download, [url],
+            message="[bold green]downloading video...[/bold green]")
+        console.print("[bold green]download completed[/bold green]")
+        console.input("[bold blue]Enter to exit[/bold blue]")
     except Exception as e:
         print(e)
 
