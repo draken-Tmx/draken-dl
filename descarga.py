@@ -217,7 +217,7 @@ def down():
                                 archivo_a_borrar = archivos[num - 1]
                                 confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? yes/no: [/]")
                                 if confirmar.lower() == "yes":
-                                    borrado(os.path.join(ruta2, archivo_a_borrar))
+                                    erased(os.path.join(ruta2, archivo_a_borrar))
                                     print(f"[bold green]{archivo_a_borrar}erased[/]✅")
                                     archivos = os.listdir(ruta2)
                                     if not archivos:
@@ -264,7 +264,7 @@ def down():
                                 archivo_a_borrar = archivos[num - 1]
                                 confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? si/no: [/]")
                                 if confirmar.lower() == "si":
-                                    borrado(os.path.join(ruta1, archivo_a_borrar))
+                                    erased(os.path.join(ruta1, archivo_a_borrar))
                                     print(f"[bold green]{archivo_a_borrar}erased[/]✅")
                                     archivos = os.listdir(ruta1)
                                     if not archivos:
