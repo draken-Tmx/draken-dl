@@ -122,7 +122,7 @@ def down():
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
-                            guardar_audio()
+                            save_audio()
                             print("[bold green]complete download[/] ✅✅") 
                             print("")
                         elif ingresar=="2":
