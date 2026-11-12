@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 termux-setup-storage
 
-ALIAS_CMD="alias draken='cd ~/draken-dl && source venv/bin/activate && python descarga.py'"
+ALIAS_CMD="alias draken='cd ~/draken-dl && source venv/bin/activate && python download.py'"
 FISH_FUNC_DIR="$HOME/.config/fish/functions"
 
 # bash
@@ -43,7 +43,7 @@ if command -v fish >/dev/null 2>&1; then
 function draken
     cd ~/draken-dl
     source venv/bin/activate.fish
-    python descarga.py
+    python download.py
 end
 EOF
     echo "[fish] función draken.fish creada"
