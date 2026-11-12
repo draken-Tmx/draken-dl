@@ -43,14 +43,14 @@ def down():
                 console.print(Align.center(izq))
                 print("")
         print("")
-        op=console.input("[bold blue]> [/]")
+        op=console.input("[bold white]> [/]")
 
         if op=="1":
             try:
                 while True:
                     clear()
-                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
-                    print("[bold cyan]2.[/][bold blue]exit[/]")
+                    print("[bold cyan]1.[/][bold white]Enter link: [/]")
+                    print("[bold cyan]2.[/][bold white]exit[/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
@@ -70,8 +70,8 @@ def down():
             try:
                 while True:
                     clear()
-                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
-                    print("[bold cyan]2.[/bold cyan][bold blue]exit[/]")
+                    print("[bold cyan]1.[/][bold white]Enter link: [/]")
+                    print("[bold cyan]2.[/bold cyan][bold white]exit[/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
@@ -93,8 +93,8 @@ def down():
             try:
                 while True:
                     clear()
-                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
-                    print("[bold cyan]2.[/][bold blue]exit [/]")
+                    print("[bold cyan]1.[/][bold white]Enter link: [/]")
+                    print("[bold cyan]2.[/][bold white]exit [/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
@@ -117,8 +117,8 @@ def down():
             try:
                 while True:
                     clear()
-                    print("[bold cyan]1.[/][bold blue]Enter link: [/]")
-                    print("[bold cyan]2.[/][bold blue]exit[/]")
+                    print("[bold cyan]1.[/][bold white]Enter link: [/]")
+                    print("[bold cyan]2.[/][bold white]exit[/]")
                     ingresar=input("> ")
                     try:
                         if ingresar=="1":
@@ -137,14 +137,14 @@ def down():
             if not os.path.exists(ruta1) and not os.path.exists(ruta2):
                 while True:
                     print("[bold red]No files downloaded[/]")
-                    print("[bold cyan]00.[/][bold blue] exit[/]")
+                    print("[bold cyan]00.[/][bold white] exit[/]")
                     exit=input("> ")
                     if exit =="00":
                         break
             elif not os.path.exists(ruta1):
                 while True:
                     print("[bold red]there are no songs,only videos[/]")
-                    print("[bold cyan]00.[/][bold blue] exit[/]")
+                    print("[bold cyan]00.[/][bold white] exit[/]")
                     exit=input("> ")
                     if exit=="00":
                         break
@@ -153,7 +153,7 @@ def down():
                     print("[bold red]there are no videos,only songs[/]")
                     for archivo in os.listdir(ruta1):
                         print(archivo)
-                        print("[bold cyan]00.[/][bold blue] exit[/]")
+                        print("[bold cyan]00.[/][bold white] exit[/]")
                     exit=input("> ")
                     if exit=="00":
                         break
@@ -161,7 +161,7 @@ def down():
                 if not os.listdir(ruta1) and not os.listdir(ruta2):
                     while True:
                         print("[bold red]No files downloaded[/]")
-                        print("[bold cyan]00.[/][bold blue]exit[/]")
+                        print("[bold cyan]00.[/][bold white]exit[/]")
                         select=input("> ")
                         if select=="00":
                             break
@@ -176,7 +176,7 @@ def down():
                             print("[bold green]downloaded videos[/]")
                             print(archivo)
                             print("")
-                        print("[bold cyan]00.[/][bold blue] exit[/]")
+                        print("[bold cyan]00.[/][bold white] exit[/]")
                         exit=input("> ")
                         if exit=="00":
                             break
@@ -206,8 +206,8 @@ def down():
                     while True:
                         for i, archivo in enumerate(archivos, 1):
                             print(f"{i}-{archivo}")
-                        print("[bold cyan]00.[/][bold blue]exit[/b]")
-                        opcion = console.input("[bold blue]> [/]").strip()
+                        print("[bold cyan]00.[/][bold white]exit[/]")
+                        opcion = console.input("[bold white]> [/]").strip()
                         if opcion == "00":
                             print("")
                             break  
@@ -253,8 +253,8 @@ def down():
                     while True:
                         for i, archivo in enumerate(archivos, 1):
                             print(f"{i}-{archivo}")
-                        print("[bold cyan]00.[/][bold blue]exit[/]")
-                        opcion = console.input("[bold blue]> [/]").strip()
+                        print("[bold cyan]00.[/][bold white]exit[/]")
+                        opcion = console.input("[bold white]> [/]").strip()
                         if opcion == "00":
                             print("")
                             break  
@@ -262,14 +262,14 @@ def down():
                             num = int(opcion)
                             if 1 <= num <= len(archivos):
                                 archivo_a_borrar = archivos[num - 1]
-                                confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? si/no: [/]")
-                                if confirmar.lower() == "si":
+                                confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? yes/no: [/]")
+                                if confirmar.lower() == "si","y","yes":
                                     erased(os.path.join(ruta1, archivo_a_borrar))
-                                    print(f"[bold green]{archivo_a_borrar}erased[/]✅")
+                                    print(f"[bold green]{archivo_a_borrar} ERASED [/]✅")
                                     archivos = os.listdir(ruta1)
                                     if not archivos:
                                         break
-                                elif confirmar.lower() == "no":
+                                elif confirmar.lower() == "no","n":
                                     print("[bold red]canceled operation[/]")
                                 else:
                                     print("[bold red]invalid option[/]")
