@@ -12,7 +12,7 @@ import subprocess
 
 from rich.console import Console
 
-from guardar import save_video, save_tiktok, save_audio, clear,rename_file,open_kew2,install_kew,save_playlist_video,save_playlist_audio,save_pin,erased
+from save import save_video, save_tiktok, save_audio, clear,rename_file,open_kew2,install_kew,save_playlist_video,save_playlist_audio,save_pin,erased
 
 ruta1="/storage/emulated/0/musica"
 
@@ -218,7 +218,7 @@ def down():
                                 confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? yes/no: [/]")
                                 if confirmar.lower() == "yes":
                                     erased(os.path.join(ruta2, archivo_a_borrar))
-                                    print(f"[bold green]{archivo_a_borrar}erased[/]✅")
+                                    print(f"[bold green]{archivo_a_borrar} ERASED [/]✅")
                                     archivos = os.listdir(ruta2)
                                     if not archivos:
                                         break
@@ -263,13 +263,13 @@ def down():
                             if 1 <= num <= len(archivos):
                                 archivo_a_borrar = archivos[num - 1]
                                 confirmar = console.input(f"[bold yellow]surely you want do delete {archivo_a_borrar}? yes/no: [/]")
-                                if confirmar.lower() == "si","y","yes":
+                                if confirmar.lower() == "yes":
                                     erased(os.path.join(ruta1, archivo_a_borrar))
                                     print(f"[bold green]{archivo_a_borrar} ERASED [/]✅")
                                     archivos = os.listdir(ruta1)
                                     if not archivos:
                                         break
-                                elif confirmar.lower() == "no","n":
+                                elif confirmar.lower() == "no":
                                     print("[bold red]canceled operation[/]")
                                 else:
                                     print("[bold red]invalid option[/]")
