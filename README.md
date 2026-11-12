@@ -180,8 +180,8 @@ Draken-dl incluye ".gitignore" para evitar que `cookies.txt` sea agregado accide
 
 ```
 draken-dl/
-├── descarga.py
-├── guardar.py
+├── download.py
+├── save.py
 ├── README.md
 ├── cookies.txt
 └── .gitignore
